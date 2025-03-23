@@ -1,4 +1,6 @@
 import data from './data.js';
+import sortFlight from './utils/sortFlight.js';
+
 
 const dom = {
     parent: document.getElementById('parent')
@@ -59,15 +61,7 @@ const createFlight = (flight) => {
 };
 
 // sortFlight
-const sortFlight = (data) => {
-    const organizeFlights = data.flights.sort((a, b) => {
-        return (
-            new Date(a.departureDate).getTime() -
-            new Date(b.departureDate).getTime()
-        );
-    });
-    return organizeFlights;
-};
+sortFlight(data);
 
 //loadHandler
 const loadHandler = () => {
